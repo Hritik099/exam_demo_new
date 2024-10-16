@@ -11,14 +11,8 @@ pipeline {
             steps {
                 // Print "Hello, World!" and run the Python script
                 echo 'Running Hello, World script...'
-                sh 'python hello.py' // Ensure hello.py exists in your repo
+                bat 'python hello.py' // Use 'bat' for Windows commands
             }
-        }
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: '**/hello.py', allowEmptyArchive: true
-            echo 'Pipeline finished. Done!'
         }
     }
 }
